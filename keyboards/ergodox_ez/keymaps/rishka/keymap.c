@@ -2,9 +2,11 @@
 #include "version.h"
 
 #define BASE 0 // default layer
-#define SYMB 1 // symbols
-#define MDIA 2 // media keys
-#define GAME 3 // Gamepad setup
+#define WIND 1 // Switch keys that are needed in windows
+#define SYMB 2 // symbols
+#define MDIA 3 // media keys
+#define GAME 4 // Gamepad setup
+#define TRPT 5 // Transparent Layer for copying
 
 enum custom_keycodes {
   EPRM = SAFE_RANGE,
@@ -16,23 +18,44 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [BASE] = LAYOUT_ergodox(
   // left hand
-  KC_EQL,          KC_1,        KC_2,          KC_3,    KC_4,    KC_5,    KC_LEFT,
+  KC_EQL,          KC_1,        KC_2,          KC_3,    KC_4,    KC_5,    TG(WIND),
   KC_DELT,         KC_Q,        KC_W,          KC_E,    KC_R,    KC_T,    TG(SYMB),
   KC_BSPC,         KC_A,        KC_S,          KC_D,    KC_F,    KC_G,
   KC_LSFT,         CTL_T(KC_Z), KC_X,          KC_C,    KC_V,    KC_B,    ALL_T(KC_NO),
   LT(SYMB,KC_GRV), KC_QUOT,     LALT(KC_LSFT), KC_LEFT, KC_RGHT,
-                                                           ALT_T(KC_APP), KC_LGUI,
+                                                           ALT_T(KC_APP), TG(GAME),
                                                                           KC_HOME,
-                                                         KC_SPC, GUI_T(KC_BSPC), KC_END,
+                                                         KC_SPC, GUI_T(KC_BSPC), ALT_T(KC_END),
   // right hand
-  KC_RGHT,      KC_6,    KC_7,    KC_8,    KC_9,              KC_0,           KC_MINS,
+  LCTL(LGUI(KC_Q)),      KC_6,    KC_7,    KC_8,    KC_9,              KC_0,           KC_MINS,
   TG(SYMB),     KC_Y,    KC_U,    KC_I,    KC_O,              KC_P,           KC_BSLS,
   KC_H,         KC_J,    KC_K,    KC_L,    LT(MDIA, KC_SCLN), GUI_T(KC_QUOT),
-  TT(GAME), KC_N,    KC_M,    KC_COMM, KC_DOT,            CTL_T(KC_SLSH), KC_RSFT,
-  KC_UP,        KC_DOWN, KC_LBRC, KC_RBRC, TT(SYMB),
+  TG(MDIA), KC_N,    KC_M,    KC_COMM, KC_DOT,            CTL_T(KC_SLSH), KC_RSFT,
+  KC_UP,        KC_DOWN, KC_LBRC, KC_RBRC, OSL(SYMB),
   KC_LALT, CTL_T(KC_ESC),
   KC_PGUP,
-  KC_PGDN, KC_TAB, KC_ENT
+  GUI_T(KC_PGDN), CTL_T(KC_TAB), ALT_T(KC_ENT)
+),
+
+[WIND] = LAYOUT_ergodox(
+  // left hand
+  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_LGUI,
+  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+                                               KC_TRNS, KC_TRNS,
+                                                        KC_TRNS,
+                                      KC_TRNS, CTL_T(KC_BSPC), KC_TRNS,
+  // right hand
+  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+           KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+                    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+  KC_TRNS, KC_TRNS,
+  KC_TRNS,
+  KC_PGDN, CTL_T(KC_TAB), KC_TRNS
 ),
 
 [SYMB] = LAYOUT_ergodox(
@@ -84,7 +107,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TAB, KC_LSHIFT, KC_A, KC_S, KC_D, KC_F,
   KC_LCTRL, KC_B, KC_Z, KC_X, KC_C, KC_V, KC_G,
   LT(BASE, KC_L), KC_J, KC_I, KC_O, KC_M,
-                                               KC_ESCAPE, TO(BASE),
+                                               KC_ESCAPE, KC_TRNS,
                                                         KC_ENTER,
                                       KC_SPACE, KC_LCTRL, KC_LALT,
  // right hand
@@ -96,6 +119,27 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_LALT, CTL_T(KC_ESC),
   KC_PGUP,
   KC_PGDN, KC_TAB, KC_ENT
+),
+
+[TRPT] = LAYOUT_ergodox(
+  // left hand
+  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+                                               KC_TRNS, KC_TRNS,
+                                                        KC_TRNS,
+                                      KC_TRNS, KC_TRNS, KC_TRNS,
+  // right hand
+  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+           KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+                    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+  KC_TRNS, KC_TRNS,
+  KC_TRNS,
+  KC_TRNS, KC_TRNS, KC_TRNS
 ),
 };
 
