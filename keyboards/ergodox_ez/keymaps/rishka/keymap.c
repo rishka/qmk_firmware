@@ -1,13 +1,14 @@
 #include QMK_KEYBOARD_H
 #include "version.h"
 
-#define BASE 0 // default layer
-#define WIND 1 // Switch keys that are needed in windows
-#define SYMB 2 // symbols
-#define MDIA 3 // media keys
-#define GAME 4 // Gamepad setup
-#define TRPT 5 // Transparent Layer for copying
-
+enum layers {
+  BASE, // default layer
+  WIN, // Switch keys that are needed in windows
+  SYMB, // symbols
+  MDIA, // media keys
+  GAME, // Gamepad setup
+  FIRMWARE // Layer to trigger reset/refresh
+};
 enum custom_keycodes {
   EPRM = SAFE_RANGE,
   VRSN,
@@ -18,13 +19,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [BASE] = LAYOUT_ergodox(
   // left hand
-  KC_EQL,          KC_1,        KC_2,          KC_3,    KC_4,    KC_5,    TG(WIND),
+  KC_EQL,          KC_1,        KC_2,          KC_3,    KC_4,    KC_5,    TG(WIN),
   KC_DELT,         KC_Q,        KC_W,          KC_E,    KC_R,    KC_T,    TG(SYMB),
   KC_BSPC,         KC_A,        KC_S,          KC_D,    KC_F,    KC_G,
   KC_LSFT,         CTL_T(KC_Z), KC_X,          KC_C,    KC_V,    KC_B,    ALL_T(KC_NO),
   LT(SYMB,KC_GRV), KC_QUOT,     LALT(KC_LSFT), KC_LEFT, KC_RGHT,
                                                            ALT_T(KC_APP), TG(GAME),
-                                                                          KC_HOME,
+                                                                          LT(FIRMWARE, KC_HOME),
                                                          KC_SPC, GUI_T(KC_BSPC), ALT_T(KC_END),
   // right hand
   LCTL(LGUI(KC_Q)),      KC_6,    KC_7,    KC_8,    KC_9,              KC_0,           KC_MINS,
@@ -37,7 +38,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   GUI_T(KC_PGDN), CTL_T(KC_TAB), ALT_T(KC_ENT)
 ),
 
-[WIND] = LAYOUT_ergodox(
+[WIN] = LAYOUT_ergodox(
   // left hand
   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
@@ -121,7 +122,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_PGDN, KC_TAB, KC_ENT
 ),
 
-[TRPT] = LAYOUT_ergodox(
+[FIRMWARE] = LAYOUT_ergodox(
   // left hand
   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
@@ -130,7 +131,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
                                                KC_TRNS, KC_TRNS,
                                                         KC_TRNS,
-                                      KC_TRNS, KC_TRNS, KC_TRNS,
+                                      RESET, KC_TRNS, KC_TRNS,
   // right hand
   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
@@ -139,7 +140,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
   KC_TRNS, KC_TRNS,
   KC_TRNS,
-  KC_TRNS, KC_TRNS, KC_TRNS
+  KC_TRNS, KC_TRNS, EEP_RST
 ),
 };
 
