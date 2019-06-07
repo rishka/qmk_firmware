@@ -1,1 +1,24 @@
+#include "../../config.h"
+
 #define PERMISSIVE_HOLD
+// #define MK_W_INTERVAL_UNMOD 3500
+// #define MK_MOMENTARY_ACCEL
+// #define MK_3_SPEED 1
+// #define MK_W_OFFSET_0   1
+// #undef MOUSEKEY_INTERVAL
+// #undef MOUSEKEY_DELAY
+#undef MOUSEKEY_TIME_TO_MAX
+// #undef MOUSEKEY_MAX_SPEED
+
+// #define MOUSEKEY_INTERVAL       30
+// #define MOUSEKEY_DELAY          100
+#define MOUSEKEY_TIME_TO_MAX    0
+// #define MOUSEKEY_MAX_SPEED     8
+
+#undef MOUSEKEY_WHEEL_MAX_SPEED
+#undef MOUSEKEY_WHEEL_TIME_TO_MAX
+// #undef MOUSEKEY_WHEEL_DELAY
+
+#define MOUSEKEY_WHEEL_MAX_SPEED    1
+#define MOUSEKEY_WHEEL_TIME_TO_MAX  0
+// #define MOUSEKEY_WHEEL_DELAY       1000
