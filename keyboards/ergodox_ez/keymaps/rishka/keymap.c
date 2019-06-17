@@ -12,7 +12,8 @@ enum layers {
 enum custom_keycodes {
   EPRM = SAFE_RANGE,
   VRSN,
-  RGB_SLD
+  RGB_SLD,
+  OSX_LOCK = LCTL(LGUI(KC_Q))
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -28,26 +29,26 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                                           LT(FIRMWARE, KC_HOME),
                                                          KC_SPC, GUI_T(KC_BSPC), ALT_T(KC_END),
   // right hand
-  LCTL(LGUI(KC_Q)),      KC_6,    KC_7,    KC_8,    KC_9,              KC_0,           KC_MINS,
-  TG(SYMB),     KC_Y,    KC_U,    KC_I,    KC_O,              KC_P,           KC_BSLS,
-  KC_H,         KC_J,    KC_K,    KC_L,    LT(MDIA, KC_SCLN), GUI_T(KC_QUOT),
-  TG(MDIA), KC_N,    KC_M,    KC_COMM, KC_DOT,            CTL_T(KC_SLSH), KC_RSFT,
-  KC_UP,        KC_DOWN, KC_LBRC, KC_RBRC, OSL(SYMB),
-  KC_LALT, CTL_T(KC_ESC),
+  OSX_LOCK,        KC_6,        KC_7,    KC_8,    KC_9,              KC_0,           KC_MINS,
+  TG(SYMB),        KC_Y,        KC_U,    KC_I,    KC_O,              KC_P,           KC_BSLS,
+  KC_H,            KC_J,        KC_K,    KC_L,    LT(MDIA, KC_SCLN), GUI_T(KC_QUOT),
+  TG(MDIA),        KC_N,        KC_M,    KC_COMM, KC_DOT,            CTL_T(KC_SLSH), KC_RSFT,
+  KC_UP,           KC_DOWN,     KC_LBRC, KC_RBRC, OSL(SYMB),
+  KC_LALT,         CTL_T(KC_ESC),
   KC_PGUP,
-  GUI_T(KC_PGDN), CTL_T(KC_TAB), ALT_T(KC_ENT)
+  GUI_T(KC_PGDN),  CTL_T(KC_TAB), ALT_T(KC_ENT)
 ),
 
 [WIN] = LAYOUT_ergodox(
   // left hand
   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_LGUI,
-  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+  KC_F1,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+  KC_TAB,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+  KC_TRNS, KC_Z,    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_LGUI,
+  KC_ESC,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
                                                KC_TRNS, KC_TRNS,
                                                         KC_TRNS,
-                                      KC_TRNS, CTL_T(KC_BSPC), KC_TRNS,
+                                      KC_TRNS, KC_BSPC, KC_TRNS,
   // right hand
   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
