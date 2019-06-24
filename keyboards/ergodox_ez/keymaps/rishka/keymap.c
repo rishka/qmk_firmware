@@ -1,6 +1,5 @@
-#include QMK_KEYBOARD_H
-#include "version.h"
 
+#include "rishka.h"
 enum layers {
   BASE, // default layer
   WIN, // Switch keys that are needed in windows
@@ -23,7 +22,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_EQL,          KC_1,        KC_2,          KC_3,    KC_4,    KC_5,    TG(WIN),
   KC_DELT,         KC_Q,        KC_W,          KC_E,    KC_R,    KC_T,    TG(SYMB),
   KC_BSPC,         KC_A,        KC_S,          KC_D,    KC_F,    KC_G,
-  KC_LSFT,         CTL_T(KC_Z), KC_X,          KC_C,    KC_V,    KC_B,    ALL_T(KC_NO),
+  OS_LSFT,         CTL_T(KC_Z), KC_X,          KC_C,    KC_V,    KC_B,    ALL_T(KC_NO),
   LT(SYMB,KC_GRV), KC_QUOT,     LALT(KC_LSFT), KC_LEFT, KC_RGHT,
                                                            ALT_T(KC_APP), TG(GAME),
                                                                           LT(FIRMWARE, KC_HOME),
@@ -32,7 +31,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   OSX_LOCK,        KC_6,        KC_7,    KC_8,    KC_9,              KC_0,           KC_MINS,
   TG(SYMB),        KC_Y,        KC_U,    KC_I,    KC_O,              KC_P,           KC_BSLS,
   KC_H,            KC_J,        KC_K,    KC_L,    LT(MDIA, KC_SCLN), GUI_T(KC_QUOT),
-  TG(MDIA),        KC_N,        KC_M,    KC_COMM, KC_DOT,            CTL_T(KC_SLSH), KC_RSFT,
+  TG(MDIA),        KC_N,        KC_M,    KC_COMM, KC_DOT,            CTL_T(KC_SLSH), OS_RSFT,
   KC_UP,           KC_DOWN,     KC_LBRC, KC_RBRC, OSL(SYMB),
   KC_LALT,         CTL_T(KC_ESC),
   KC_PGUP,
