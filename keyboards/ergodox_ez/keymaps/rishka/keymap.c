@@ -17,11 +17,10 @@ enum custom_keycodes {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [BASE] = LAYOUT_ergodox_pretty_wrapper(
-  // left hand
-  KC_EQL,  ________________NUMBERS_L__________________, TG(WIN),          OSX_LOCK,  ________________NUMBERS_R__________________, KC_MINS,
-  KC_DELT, _________________QWERTY_L1_________________, TG(SYMB),         TG(SYMB), _________________QWERTY_R1_________________, KC_BSLS,
-  KC_BSPC, _____________MOD_QWERTY_L2_________________,                             _____________MOD_QWERTY_R2_________________, GUI_T(KC_QUOT),
-  OS_LSFT, _________________QWERTY_L3_________________, ALL_T(KC_NO),     TG(MDIA), _________________QWERTY_R3_________________, OS_RSFT,
+  KC_EQL,  ________________NUMBERS_L__________________, TG(WIN),       OSX_LOCK, ________________NUMBERS_R__________________, KC_MINS,
+  KC_DELT, _________________QWERTY_L1_________________, TG(SYMB),      TG(SYMB), _________________QWERTY_R1_________________, KC_BSLS,
+  KC_BSPC, _____________MOD_QWERTY_L2_________________,                          _____________MOD_QWERTY_R2_________________, GUI_T(KC_QUOT),
+  OS_LSFT, _________________QWERTY_L3_________________, ALL_T(KC_NO),  TG(MDIA), _________________QWERTY_R3_________________, OS_RSFT,
   LT(SYMB,KC_GRV), KC_QUOT, LALT(KC_LSFT), KC_LEFT, KC_RGHT,                        KC_UP,   KC_DOWN, KC_LBRC,  KC_RBRC,        OSL(SYMB),
                                            ALT_T(KC_APP), TG(GAME),       KC_LALT,         CTL_T(KC_ESC),
                                             LT(FIRMWARE, KC_HOME),        KC_PGUP,
@@ -29,7 +28,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [WIN] = LAYOUT_ergodox_pretty_wrapper(
-  // left hand
   _______, _______, _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______, _______, _______,
   KC_F1,   _______, _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______, _______, _______,
   KC_TAB,  _________________QWERTY_L2_________________,                       _______, _______, _______, _______, _______, _______,
@@ -40,25 +38,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                       _______, KC_BSPC, KC_LALT,     KC_PGDN, CTL_T(KC_TAB), _______
 ),
 
-[SYMB] = LAYOUT_ergodox(
-  // left hand
-  VRSN,    KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   _______,
-  _______, KC_EXLM, KC_AT,   KC_LCBR, KC_RCBR, KC_PIPE, _______,
-  _______, KC_HASH, KC_DLR,  KC_LPRN, KC_RPRN, KC_GRV,
-  _______, KC_PERC, KC_CIRC, KC_LBRC, KC_RBRC, KC_TILD, _______,
-  EPRM,    _______, _______, _______, _______,
-                                               RGB_MOD, RGB_VAI,
-                                                        RGB_VAD,
-                                      _______, _______, _______,
-  // right hand
-  _______, KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,
-  _______, KC_UP,   KC_7,    KC_8,    KC_9,    KC_ASTR, KC_F12,
-  KC_DOWN, KC_4,    KC_5,    KC_6,    KC_PLUS, _______,
-  _______, KC_AMPR, KC_1,    KC_2,    KC_3,    KC_BSLS, _______,
-  _______, KC_DOT,  KC_0,    KC_EQL,  _______,
-  RGB_HUI, RGB_SLD,
-  RGB_HUD,
-  RGB_TOG, _______, _______
+[SYMB] = LAYOUT_ergodox_pretty_wrapper(
+VRSN,    ______________________F_L__________________, KC_F11,       KC_F12 , ______________________F_R__________________, _______,
+_______, _________________SYMBOL_L1_________________, _______,      _______, _________________SYMBOL_R1_________________, _______,
+_______, _________________SYMBOL_L2_________________,                        _________________SYMBOL_R2_________________, _______,
+_______, _________________SYMBOL_L3_________________, _______,      _______, _________________SYMBOL_R3_________________, _______,
+_______, _______, _______, _______, _______,                                          _______, _______, _______, _______, _______,
+                                               RGB_MOD, RGB_VAI,   RGB_HUI, RGB_SLD,
+                                                        RGB_VAD,   RGB_HUD,
+                                      _______, _______, _______,   RGB_TOG, _______, _______
 ),
 
 [MDIA] = LAYOUT_ergodox(
