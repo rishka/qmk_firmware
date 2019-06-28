@@ -16,6 +16,7 @@
 #define OS_HYPR OSM(MOD_HYPR)
 #define _______ KC_TRNS
 
+#define OSX_LOCK LCTL(LGUI(KC_Q))
 
 
 
