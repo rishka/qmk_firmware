@@ -18,44 +18,26 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [BASE] = LAYOUT_ergodox_pretty_wrapper(
   // left hand
-  KC_EQL,  ________________NUMBERS_L__________________, TG(WIN),
-  KC_DELT, _________________QWERTY_L1_________________, TG(SYMB),
-  KC_BSPC, _____________MOD_QWERTY_L2_________________,
-  OS_LSFT, _________________QWERTY_L3_________________, ALL_T(KC_NO),
-  LT(SYMB,KC_GRV), KC_QUOT, LALT(KC_LSFT), KC_LEFT, KC_RGHT,
-                                           ALT_T(KC_APP), TG(GAME),
-                                            LT(FIRMWARE, KC_HOME),
-                            KC_SPC, GUI_T(KC_BSPC), ALT_T(KC_END),
-  // right hand
-  _______,  ________________NUMBERS_R__________________, KC_MINS,
-  TG(SYMB), _________________QWERTY_R1_________________, KC_BSLS,
-            _____________MOD_QWERTY_R2_________________, GUI_T(KC_QUOT),
-  TG(MDIA), _________________QWERTY_R3_________________, OS_RSFT,
-             KC_UP,   KC_DOWN, KC_LBRC,  KC_RBRC,        OSL(SYMB),
-  KC_LALT,         CTL_T(KC_ESC),
-  KC_PGUP,
-  GUI_T(KC_PGDN),  CTL_T(KC_TAB), ALT_T(KC_ENT)
+  KC_EQL,  ________________NUMBERS_L__________________, TG(WIN),          _______,  ________________NUMBERS_R__________________, KC_MINS,
+  KC_DELT, _________________QWERTY_L1_________________, TG(SYMB),         TG(SYMB), _________________QWERTY_R1_________________, KC_BSLS,
+  KC_BSPC, _____________MOD_QWERTY_L2_________________,                             _____________MOD_QWERTY_R2_________________, GUI_T(KC_QUOT),
+  OS_LSFT, _________________QWERTY_L3_________________, ALL_T(KC_NO),     TG(MDIA), _________________QWERTY_R3_________________, OS_RSFT,
+  LT(SYMB,KC_GRV), KC_QUOT, LALT(KC_LSFT), KC_LEFT, KC_RGHT,                        KC_UP,   KC_DOWN, KC_LBRC,  KC_RBRC,        OSL(SYMB),
+                                           ALT_T(KC_APP), TG(GAME),       KC_LALT,         CTL_T(KC_ESC),
+                                            LT(FIRMWARE, KC_HOME),        KC_PGUP,
+                            KC_SPC, GUI_T(KC_BSPC), ALT_T(KC_END),        GUI_T(KC_PGDN),  CTL_T(KC_TAB), ALT_T(KC_ENT)
 ),
 
 [WIN] = LAYOUT_ergodox_pretty_wrapper(
   // left hand
-  _______, _______, _______, _______, _______, _______, _______,
-  KC_F1,   _______, _______, _______, _______, _______, _______,
-  KC_TAB,  _________________QWERTY_L2_________________,
-  _______, _______,    _______, _______, _______, _______, KC_LGUI,
-  KC_LCTL, _______, KC_LALT, _______, _______,
-                                               _______, KC_ESC,
-                                                        _______,
-                                      _______, KC_BSPC, KC_LALT,
-  // right hand
-  _______, _______, _______, _______, _______, _______, _______,
-  _______, _______, _______, _______, _______, _______, _______,
-           _______, _______, _______, _______, _______, _______,
-  _______, _______, _______, _______, _______, _______, _______,
-                    _______, _______, _______, _______, _______,
-  _______, _______,
-  _______,
-  KC_PGDN, CTL_T(KC_TAB), _______
+  _______, _______, _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______, _______, _______,
+  KC_F1,   _______, _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______, _______, _______,
+  KC_TAB,  _________________QWERTY_L2_________________,                       _______, _______, _______, _______, _______, _______,
+  _______, _______,    _______, _______, _______, _______, KC_LGUI,  _______, _______, _______, _______, _______, _______, _______,
+  KC_LCTL, _______, KC_LALT, _______, _______,                                         _______, _______, _______, _______, _______,
+                                               _______, KC_ESC,      _______, _______,
+                                                        _______,     _______,
+                                      _______, KC_BSPC, KC_LALT,     KC_PGDN, CTL_T(KC_TAB), _______
 ),
 
 [SYMB] = LAYOUT_ergodox(
