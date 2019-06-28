@@ -18,7 +18,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [BASE] = LAYOUT_ergodox_pretty_wrapper(
   // left hand
-  KC_EQL,  ________________NUMBERS_L__________________, TG(WIN),          _______,  ________________NUMBERS_R__________________, KC_MINS,
+  KC_EQL,  ________________NUMBERS_L__________________, TG(WIN),          OSX_LOCK,  ________________NUMBERS_R__________________, KC_MINS,
   KC_DELT, _________________QWERTY_L1_________________, TG(SYMB),         TG(SYMB), _________________QWERTY_R1_________________, KC_BSLS,
   KC_BSPC, _____________MOD_QWERTY_L2_________________,                             _____________MOD_QWERTY_R2_________________, GUI_T(KC_QUOT),
   OS_LSFT, _________________QWERTY_L3_________________, ALL_T(KC_NO),     TG(MDIA), _________________QWERTY_R3_________________, OS_RSFT,
@@ -64,8 +64,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [MDIA] = LAYOUT_ergodox(
   // left hand
   _______, _______, _______, _______, _______, _______, _______,
-  _______, _______, _______, KC_MS_U, _______, _______, _______,
-  _______, _______, KC_MS_L, KC_MS_D, KC_MS_R, _______,
+  _______, _______, _______, KC_MS_U, _______, KC_WH_U, _______,
+  _______, _______, KC_MS_L, KC_MS_D, KC_MS_R, KC_WH_D,
   _______, _______, _______, _______, _______, _______, _______,
   _______, _______, _______, KC_BTN1, KC_BTN2,
                                                _______, KC_BTN5,
