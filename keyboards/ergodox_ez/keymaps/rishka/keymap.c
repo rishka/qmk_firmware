@@ -19,7 +19,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [BASE] = LAYOUT_ergodox_pretty_wrapper(
   KC_EQL,  ________________NUMBERS_L__________________, TG(WIN),       OSX_LOCK, ________________NUMBERS_R__________________, KC_MINS,
   KC_DELT, _________________QWERTY_L1_________________, TG(SYMB),      TG(SYMB), _________________QWERTY_R1_________________, KC_BSLS,
-  KC_BSPC, _____________MOD_QWERTY_L2_________________,                          _____________MOD_QWERTY_R2_________________, GUI_T(KC_QUOT),
+  KC_BSPC, _____________MOD_QWERTY_L2_________________,                          _____________MOD_QWERTY_R2_________________, LT(MDIA, KC_QUOT),
   OS_LSFT, _________________QWERTY_L3_________________, ALL_T(KC_NO),  TG(MDIA), _________________QWERTY_R3_________________, OS_RSFT,
   LT(SYMB,KC_GRV), KC_QUOT, LALT(KC_LSFT), KC_LEFT, KC_RGHT,                        KC_UP,   KC_DOWN, KC_LBRC,  KC_RBRC,        OSL(SYMB),
                                            ALT_T(KC_APP), TG(GAME),       KC_LALT,         CTL_T(KC_ESC),
@@ -39,7 +39,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [SYMB] = LAYOUT_ergodox_pretty_wrapper(
-VRSN,    ______________________F_L__________________, KC_F11,       KC_F12 , ______________________F_R__________________, _______,
+VRSN,    ______________________F_L__________________, KC_F11,       KC_F12 , ______________________F_R__________________, KC_NLCK,
 _______, _________________SYMBOL_L1_________________, _______,      _______, _________________SYMBOL_R1_________________, _______,
 _______, _________________SYMBOL_L2_________________,                        _________________SYMBOL_R2_________________, _______,
 _______, _________________SYMBOL_L3_________________, _______,      _______, _________________SYMBOL_R3_________________, _______,
