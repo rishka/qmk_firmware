@@ -13,7 +13,7 @@
 -I./quantum/process_keycode
 -I./quantum/serial_link
 -I./quantum/template
--I./quantum/tools
+-I./quantum/tool
 -I./quantum/visualizer
 -I./tmk_core
 -I./tmk_core/common

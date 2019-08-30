@@ -1,7 +1,7 @@
 # MCU name
 #MCU = at90usb1286
 MCU = atmega32u4
-
+BOOTLOADER = qmk-dfu
 # Processor frequency.
 #     This will define a symbol, F_CPU, in all source code files equal to the
 #     processor frequency in Hz. You can then use this symbol in your source code to
