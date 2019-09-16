@@ -19,10 +19,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #pragma once
 
 
-#define USE_SERIAL
-// #define USE_I2C
-// #define F_SCL 100000L
-// #define SCL_CLOCK 100000L
+// #define USE_SERIAL
+#define USE_I2C
 // #define MASTER_LEFT
 // #define MASTER_RIGHT
 #define EE_HANDS
