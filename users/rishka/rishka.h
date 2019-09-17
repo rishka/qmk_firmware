@@ -1,8 +1,15 @@
-#include QMK_KEYBOARD_H
-#include "version.h"
+
+
+#if (!defined(LAYOUT) && defined(KEYMAP))
+#    define LAYOUT KEYMAP
+#endif
 
 #undef MK_MOMENTARY_ACCEL
 #define MK_3_SPEED 1
+
+#define LAYOUT_ergodox_pretty_wrapper(...)  LAYOUT_ergodox_pretty(__VA_ARGS__)
+#define LAYOUT_wrapper(...)                 LAYOUT(__VA_ARGS__)
+#define LAYOUT_5x6_wrapper(...)             LAYOUT_5x6(__VA_ARGS__)
 #define KC_MLSF OSM(MOD_LSFT)
 #define KC_MRSF OSM(MOD_RSFT)
 
@@ -16,14 +23,12 @@
 #define OS_RALT OSM(MOD_RALT)
 #define OS_MEH  OSM(MOD_MEH)
 #define OS_HYPR OSM(MOD_HYPR)
+#define MOUSE_L LSFT(KC_WH_D)
+#define MOUSE_R LSFT(KC_WH_U)
 #define _______ KC_TRNS
-
 #define OSX_LOCK LCTL(LGUI(KC_Q))
 
-
-
 // layout parts for easy reuse between keyboard keymaps
-
 // ,-----+-----+-----+-----+-----,   ,-----+-----+-----+-----+-----,
 // |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |
 // ,-----+-----+-----+-----+-----,   ,-----+-----+-----+-----+-----,
@@ -65,7 +70,7 @@
 #define ________________CARPALX_L2_________________  KC_D   , KC_S   , KC_T   , KC_N   , KC_R
 #define ________________CARPALX_L3_________________  KC_Z   , KC_X   , KC_C   , KC_V   , KC_J
 
-#define ________________CARPALX_R1_________________  KC_Y   , KC_F   , KC_U   , KC_B   , KC_SCLN
+#define ________________CARPALX_R1_________________  KC_Y   , KC_F   , KC_U6  , KC_B   , KC_SCLN
 #define ________________CARPALX_R2_________________  KC_I   , KC_A   , KC_E   , KC_O   , KC_H
 #define ________________CARPALX_R3_________________  KC_K   , KC_P   , KC_COMM, KC_DOT , KC_SLSH
 
@@ -83,6 +88,3 @@
 #define _________________SYMBOL_R1_________________  KC_BSLS, KC_P7, KC_P8 , KC_P9, KC_PAST
 #define _________________SYMBOL_R2_________________  KC_EQL , KC_P4, KC_P5, KC_P6, KC_PPLS
 #define _________________SYMBOL_R3_________________  KC_ASTR, KC_P1, KC_P2, KC_P3, KC_PMNS
-
-#define LAYOUT_ergodox_pretty_wrapper(...)  LAYOUT_ergodox_pretty(__VA_ARGS__)
-#define LAYOUT_wrapper(...)                 LAYOUT(__VA_ARGS__)

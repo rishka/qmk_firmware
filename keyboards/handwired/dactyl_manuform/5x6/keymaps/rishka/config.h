@@ -26,3 +26,5 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define EE_HANDS
 // Rows are doubled-up
 // #define DEBOUNCE 5
+#define TAPPING_TOGGLE 3
+#define ONESHOT_TAP_TOGGLE 3
