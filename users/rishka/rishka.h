@@ -70,7 +70,7 @@
 #define ________________CARPALX_L2_________________  KC_D   , KC_S   , KC_T   , KC_N   , KC_R
 #define ________________CARPALX_L3_________________  KC_Z   , KC_X   , KC_C   , KC_V   , KC_J
 
-#define ________________CARPALX_R1_________________  KC_Y   , KC_F   , KC_U6  , KC_B   , KC_SCLN
+#define ________________CARPALX_R1_________________  KC_Y   , KC_F   , KC_U  , KC_B   , KC_SCLN
 #define ________________CARPALX_R2_________________  KC_I   , KC_A   , KC_E   , KC_O   , KC_H
 #define ________________CARPALX_R3_________________  KC_K   , KC_P   , KC_COMM, KC_DOT , KC_SLSH
 
