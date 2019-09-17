@@ -1,4 +1,6 @@
 
+#include QMK_KEYBOARD_H
+#include "version.h"
 #include "rishka.h"
 enum layers {
   BASE, // default layer
