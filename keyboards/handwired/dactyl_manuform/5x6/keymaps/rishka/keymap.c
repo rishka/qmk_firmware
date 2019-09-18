@@ -15,8 +15,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [BASE] = LAYOUT_5x6_wrapper(
      KC_EQL , ________________NUMBERS_L__________________,                         ________________NUMBERS_R__________________, KC_MINS,
-     KC_TAB , _________________QWERTY_L1_________________,                         _________________QWERTY_R1_________________, KC_BSLS,
-     KC_LCTL, _____________MOD_QWERTY_L2_________________,                         _____________MOD_QWERTY_R2_________________, KC_QUOT,
+     KC_ESC , _________________QWERTY_L1_________________,                         _________________QWERTY_R1_________________, KC_BSLS,
+     KC_F1  , _____________MOD_QWERTY_L2_________________,                         _____________MOD_QWERTY_R2_________________, KC_QUOT,
      OS_LSFT, _________________QWERTY_L3_________________,                         _________________QWERTY_R3_________________, OS_RSFT,
                       KC_LEFT,KC_RGHT,                                                       KC_UP, KC_DOWN,
                                      KC_BSPC, KC_SPC,                         KC_TAB, KC_ENT,
