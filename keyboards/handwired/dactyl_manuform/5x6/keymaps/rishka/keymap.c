@@ -43,7 +43,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                _______, _______,            KC_P0 , KC_PDOT,
                                                _______, _______,            _______, _______,
                                                RESET  , _______,            _______, _______,
-                                               _______, _______,            _______, _______
+                                               RGB_TOG, _______,            _______, _______
   ),
   [MDIA] = LAYOUT_5x6_wrapper(
 
