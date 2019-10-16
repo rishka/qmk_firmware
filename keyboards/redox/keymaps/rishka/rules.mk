@@ -1,3 +1,0 @@
-RGBLIGHT_ENABLE = yes
-
-BOOTLOADER = qmk-dfu
